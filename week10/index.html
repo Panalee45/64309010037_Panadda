@@ -20,20 +20,23 @@
         xhttp.onload = function(){
             //console.log(this.responseText);
             let temp = '';
-            let i = 0;
-
-            let obj = JSON.parse(this.responseText);
-
-            for(i=0;i<obj.length;i++){
-                temp += 
-                '<tr>' +
-                '<td>' + obj[i].movieName + '<br>' +
-                'iframe src="' + obj[i].trailer + '"></iframe></td>'+'</tr>'
-            }
-            document.getElementById('display').innerHTML = '<table class="table">'+temp+'</table>';
+  let i = 0;
+  let obj = JSON.parse(this.responseText);
+  for (i=0;i<obj.length;i++){
+    temp +='<tr><td><h2>'+obj[i].movieName+'<br></h2>'
+      +"ความยาวหนัง"+obj[i].movieLength+'<br>'
+      +"ผู้กับกับ"+obj[i].director+'<br>'
+      +"แนวหนัง"+obj[i].category+'<br>'
+      +"รีวิว"+obj[i].review.review+'<br>'
+      +'<iframe src="' + obj[i].trailer + ' "height="400px"width="500px"></iframe>'
+      +'<td><img src=" '+obj[i].picture+'"height="100px"width="75px"></td>' + '</tr>';
+      
+  }
+  document.getElementById('display').innerHTML= '<table class = "table">'+temp+'</table>' ;  
+      
         }
-
-
-    </script>
+      </script>
+   
+    
   </body>
 </html>
