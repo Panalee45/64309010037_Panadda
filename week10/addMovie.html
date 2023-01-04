@@ -58,12 +58,30 @@
         
         </div>       <div class="row">
                     <div class="col">
-                        <input class="btn btn-success" type="button" value="Submit">
+                        <input class="btn btn-success" type="button" value="Submit" onclick="add()">
                     </div>
                 </div>
         </form>
     </div>
 
+
+    <script>
+        function add() {
+        let obj = { 
+            "id":"",
+            "movieName": document.forms['myForm']['movieName'].value,
+            "movieLength":document.forms['myForm']['movieLength'].value,
+            "director":document.forms['myForm']['director'].value,
+            "category":document.forms['myForm']['category'].value,
+            "review": {
+                "review":document.forms['myForm']['review'].value,
+      
+            }
+        };
+        console.log(obj);
+    }
+
+    </script>
 
 </body>
 
